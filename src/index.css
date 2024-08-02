@@ -1,18 +1,24 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 :root {
-	--primary-color: #130c22;
-	--secondary-color: #211735;
-	--dark-color: #0f031a;
-	--light-color: #f4f4f4;
-	--danger-color: #dc3545;
+	--white-color: #ffffff;
+	--primary-color: #f8f8f8;
+	--secondary-color: #aaaaaa;
+	--tertiary-color: #525252;
+	--black-color: #000000;
+	--yellow-color: #f7df1e;
 
-	background-color: var(--primary-color);
-	color: var(--light-color);
+	background-color: var(--black-color);
 }
 
-html {
-	scroll-behavior: smooth;
+::selection {
+	background-color: var(--yellow-color);
+	color: var(--black-color);
+}
+
+:focus {
+	color: var(--yellow-color);
+	outline: none;
 }

@@ -1,6 +1,6 @@
 const Contact = () => {
 	return (
-		<section id="contact" className="bg-secondary p-6">
+		<section id="contact" className="bg-primary p-6">
 			<div className="mb-4">
 				<h1 className="text-3xl">Get in touch</h1>
 				<p>
@@ -18,7 +18,8 @@ const Contact = () => {
 						id="name"
 						name="name"
 						placeholder="your name"
-						className="px-3 py-2 rounded bg-dark"
+						autoComplete="off"
+						className="px-3 py-2 rounded placeholder-tertiary bg-secondary"
 						required
 					/>
 				</div>
@@ -31,7 +32,8 @@ const Contact = () => {
 						id="email"
 						name="email"
 						placeholder="your email"
-						className="px-3 py-2 rounded bg-dark"
+						autoComplete="off"
+						className="px-3 py-2 rounded placeholder-tertiary bg-secondary"
 						required
 					/>
 				</div>
@@ -43,13 +45,13 @@ const Contact = () => {
 						id="message"
 						name="message"
 						placeholder="additional information"
-						className="px-3 py-2 rounded bg-dark"
+						className="px-3 py-2 rounded placeholder-tertiary bg-secondary"
 						required
 					/>
 				</div>
 				<button
 					type="submit"
-					className="px-3 py-2 rounded-lg bg-primary hover:bg-dark transition"
+					className="px-3 py-2 rounded-lg bg-primary hover:bg-secondary transition"
 				>
 					Send
 				</button>

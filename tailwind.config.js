@@ -4,12 +4,15 @@ export default {
 	theme: {
 		extend: {
 			colors: {
+				white: 'var(--white-color)',
 				primary: 'var(--primary-color)',
 				secondary: 'var(--secondary-color)',
-				dark: 'var(--dark-color)',
-				light: 'var(--light-color)',
-				danger: 'var(--danger-color)',
+				tertiary: 'var(--tertiary-color)',
+				black: 'var(--black-color)',
+				yellow: 'var(--yellow-color)',
 			},
+
+			fontFamily: {},
 		},
 	},
 	plugins: [],
