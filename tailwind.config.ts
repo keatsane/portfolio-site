@@ -1,5 +1,6 @@
-/** @type {import('tailwindcss').Config} */
-export default {
+import { Config } from 'tailwindcss'
+
+const config: Config = {
 	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
 	theme: {
 		extend: {
@@ -11,9 +12,10 @@ export default {
 				black: 'var(--black-color)',
 				yellow: 'var(--yellow-color)',
 			},
-
 			fontFamily: {},
 		},
 	},
 	plugins: [],
 }
+
+export default config
