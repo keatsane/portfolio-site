@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+import { FaGamepad, FaGear } from 'react-icons/fa6'
+import { CgWebsite, CgExtension } from 'react-icons/cg'
 
 export const Projects = () => {
 	return (
@@ -8,41 +10,61 @@ export const Projects = () => {
 				to="/TossIt"
 				className="group flex justify-between items-center p-2 hover:bg-opaque transition"
 			>
-				<span className="font-bold text-lg md:text-2xl text-primary group-hover:text-accent transition mr-2">
+				<span className="font-bold text-lg md:text-2xl text-primary group-hover:text-accent transition italic">
 					TossIt
 				</span>
-				<span className="text-sm md:text-lg text-secondary">
-					Browser remake of a classic mobile game
+				<span className="flex items-center gap-x-2 sm:gap-x-4 text-sm md:text-lg text-secondary group-hover:text-accent transition">
+					<FaGamepad size={24} />
+					Browser remake of classic game
 				</span>
 			</Link>
 			<Link
 				to="/Spotted"
 				className="group flex justify-between items-center p-2 hover:bg-opaque transition"
 			>
-				<span className="font-bold text-lg md:text-2xl text-primary group-hover:text-accent transition mr-2">
+				<span className="font-bold text-lg md:text-2xl text-primary group-hover:text-accent transition italic">
 					Spotted
 				</span>
-				<span className="text-sm md:text-lg text-secondary">
-					Stealth-based browser game
+				<span className="flex items-center gap-x-2 sm:gap-x-4 text-sm md:text-lg text-secondary group-hover:text-accent transition">
+					<FaGamepad size={24} />
+					Stealth based browser game
 				</span>
 			</Link>
 			<Link
-				to="/Website1"
+				to="/Website"
 				className="group flex justify-between items-center p-2 hover:bg-opaque transition"
 			>
-				<span className="font-bold text-lg md:text-2xl text-primary group-hover:text-accent transition mr-2">
-					Website1
+				<span className="font-bold text-lg md:text-2xl text-primary group-hover:text-accent transition">
+					Cool Website
 				</span>
-				<span className="text-sm md:text-lg text-secondary">Boring website</span>
+				<span className="flex items-center gap-x-2 sm:gap-x-4 text-sm md:text-lg text-secondary group-hover:text-accent transition">
+					<CgWebsite size={24} />
+					Website w/ many themes
+				</span>
 			</Link>
 			<Link
-				to="/Website2"
+				to="/ChromeExtension"
 				className="group flex justify-between items-center p-2 hover:bg-opaque transition"
 			>
-				<span className="font-bold text-lg md:text-2xl text-primary group-hover:text-accent transition mr-2">
-					Website2
+				<span className="font-bold text-lg md:text-2xl text-primary group-hover:text-accent transition">
+					Extension
 				</span>
-				<span className="text-sm md:text-lg text-secondary">Fun website</span>
+				<span className="flex items-center gap-x-2 sm:gap-x-4 text-sm md:text-lg text-secondary group-hover:text-accent transition">
+					<CgExtension size={24} />
+					Useful Chrome Extension
+				</span>
+			</Link>
+			<Link
+				to="/ChessEngine"
+				className="group flex justify-between items-center p-2 hover:bg-opaque transition"
+			>
+				<span className="font-bold text-lg md:text-2xl text-primary group-hover:text-accent transition">
+					Chess Engine
+				</span>
+				<span className="flex items-center gap-x-2 sm:gap-x-4 text-sm md:text-lg text-secondary group-hover:text-accent transition">
+					<FaGear size={20} />
+					Basic Chess Engine
+				</span>
 			</Link>
 		</section>
 	)
