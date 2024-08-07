@@ -2,16 +2,18 @@ interface TechDisplayProps {
 	icon: React.ReactNode
 	name: string
 	link: string
+	color: string
 }
 
-export const TechDisplay = ({ icon, name, link }: TechDisplayProps) => {
+export const TechDisplay = ({ icon, name, link, color }: TechDisplayProps) => {
 	return (
 		<a
 			href={link}
 			target="_blank"
 			title={name}
 			rel="noopener noreferrer"
-			className="flex items-center bg-opaque hover:bg-accent space-x-2 text-primary font-bold transition cursor-pointer p-2"
+			className="flex items-center bg-opaque hover:bg-opaque_dark space-x-2 font-bold transition cursor-pointer p-2"
+			style={{ color: color }}
 		>
 			<span>{name}</span>
 			{icon}
