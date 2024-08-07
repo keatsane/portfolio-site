@@ -27,8 +27,13 @@ export const Contact = () => {
 	return (
 		<section id="contact" className="flex flex-col gap-y-2">
 			<div className="flex flex-col sm:flex-row justify-between sm:items-center">
-				<h2 className="text-3xl font-bold mb-2">Contact Me</h2>
-				<div className="flex flex-col sm:flex-row gap-x-4 items-start sm:items-center mb-2 sm:mb-0 text-secondary">
+				<h2 className="text-3xl font-bold mb-2 fade-in" style={{ animationDelay: '0.55s' }}>
+					Contact Me
+				</h2>
+				<div
+					className="flex flex-col sm:flex-row gap-x-4 items-start sm:items-center mb-2 sm:mb-0 text-secondary fade-in"
+					style={{ animationDelay: '0.6s' }}
+				>
 					<span
 						className={`flex items-center gap-x-2 hover:bg-opaque p-2 cursor-pointer transition relative ${
 							emailCopied ? 'text-success' : 'text-secondary'
@@ -68,7 +73,8 @@ export const Contact = () => {
 					autoComplete="name"
 					value={name}
 					onChange={(e) => setName(e.target.value)}
-					className="p-2 border border-secondary bg-opaque placeholder:text-secondary focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent"
+					className="p-2 border border-secondary bg-opaque placeholder:text-secondary focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent fade-in"
+					style={{ animationDelay: '0.65s' }}
 				/>
 				<input
 					id="email"
@@ -77,15 +83,16 @@ export const Contact = () => {
 					autoComplete="email"
 					value={email}
 					onChange={(e) => setEmail(e.target.value)}
-					className="p-2 border border-secondary bg-opaque placeholder:text-secondary focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent"
+					className="p-2 border border-secondary bg-opaque placeholder:text-secondary focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent fade-in"
+					style={{ animationDelay: '0.7s' }}
 				/>
 				<textarea
 					id="message"
 					placeholder="Message"
 					value={message}
 					onChange={(e) => setMessage(e.target.value)}
-					className="p-2 border border-secondary bg-opaque placeholder:text-secondary focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent"
-					style={{ minHeight: '100px', maxHeight: '300px' }}
+					className="p-2 border border-secondary bg-opaque placeholder:text-secondary focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent fade-in"
+					style={{ animationDelay: '0.75s', minHeight: '100px', maxHeight: '300px' }}
 				/>
 				<button
 					type="submit"
@@ -94,7 +101,8 @@ export const Contact = () => {
 						!isFormValid
 							? 'bg-secondary cursor-not-allowed'
 							: 'bg-accent hover:bg-accent_dark transition'
-					}`}
+					} fade-in`}
+					style={{ animationDelay: '0.8s' }}
 				>
 					{isFormValid ? (
 						<div className="text-primary flex justify-center items-center gap-x-2">

@@ -5,10 +5,13 @@ import { CgWebsite, CgExtension } from 'react-icons/cg'
 export const Projects = () => {
 	return (
 		<section id="projects" className="flex flex-col gap-y-2">
-			<h2 className="text-3xl font-bold">Projects</h2>
+			<h2 className="text-3xl font-bold fade-in" style={{ animationDelay: '0.2s' }}>
+				Projects
+			</h2>
 			<Link
 				to="/TossIt"
-				className="group flex justify-between items-center p-2 hover:bg-opaque transition"
+				className="group flex justify-between items-center p-2 hover:bg-opaque transition fade-in"
+				style={{ animationDelay: '0.25s' }}
 			>
 				<span className="font-bold text-lg md:text-2xl text-primary group-hover:text-accent transition italic">
 					TossIt
@@ -20,7 +23,8 @@ export const Projects = () => {
 			</Link>
 			<Link
 				to="/Spotted"
-				className="group flex justify-between items-center p-2 hover:bg-opaque transition"
+				className="group flex justify-between items-center p-2 hover:bg-opaque transition fade-in"
+				style={{ animationDelay: '0.3s' }}
 			>
 				<span className="font-bold text-lg md:text-2xl text-primary group-hover:text-accent transition italic">
 					Spotted
@@ -32,7 +36,8 @@ export const Projects = () => {
 			</Link>
 			<Link
 				to="/Website"
-				className="group flex justify-between items-center p-2 hover:bg-opaque transition"
+				className="group flex justify-between items-center p-2 hover:bg-opaque transition fade-in"
+				style={{ animationDelay: '0.35s' }}
 			>
 				<span className="font-bold text-lg md:text-2xl text-primary group-hover:text-accent transition">
 					Cool Website
@@ -44,7 +49,8 @@ export const Projects = () => {
 			</Link>
 			<Link
 				to="/ChromeExtension"
-				className="group flex justify-between items-center p-2 hover:bg-opaque transition"
+				className="group flex justify-between items-center p-2 hover:bg-opaque transition fade-in"
+				style={{ animationDelay: '0.4s' }}
 			>
 				<span className="font-bold text-lg md:text-2xl text-primary group-hover:text-accent transition">
 					Extension
@@ -56,7 +62,8 @@ export const Projects = () => {
 			</Link>
 			<Link
 				to="/ChessEngine"
-				className="group flex justify-between items-center p-2 hover:bg-opaque transition"
+				className="group flex justify-between items-center p-2 hover:bg-opaque transition fade-in"
+				style={{ animationDelay: '0.45s' }}
 			>
 				<span className="font-bold text-lg md:text-2xl text-primary group-hover:text-accent transition">
 					Chess Engine
