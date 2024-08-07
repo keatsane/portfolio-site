@@ -50,15 +50,6 @@ export const Header = () => {
 				KS
 			</Link>
 			<div className="font-semibold flex gap-x-2 md:gap-x-4 text-secondary">
-				<a href="#about" className="hover:text-primary transition">
-					ABOUT
-				</a>
-				<a href="#projects" className="hover:text-primary transition">
-					PROJECTS
-				</a>
-				<a href="#contact" className="hover:text-primary transition">
-					CONTACT
-				</a>
 				<button onClick={toggleTheme} className="hover:text-primary transition">
 					{isDarkTheme ? (
 						<CurrentMoonPhase

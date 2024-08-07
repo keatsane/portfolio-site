@@ -17,10 +17,10 @@ export const Contact = () => {
 		navigator.clipboard.writeText(text).then(() => {
 			if (type === 'email') {
 				setEmailCopied(true)
-				setTimeout(() => setEmailCopied(false), 2000)
+				setTimeout(() => setEmailCopied(false), 1000)
 			} else {
 				setPhoneCopied(true)
-				setTimeout(() => setPhoneCopied(false), 2000)
+				setTimeout(() => setPhoneCopied(false), 1000)
 			}
 		})
 	}
@@ -43,6 +43,7 @@ export const Contact = () => {
 							emailCopied ? 'text-success' : 'text-secondary'
 						} `}
 						onClick={() => copyToClipboard('keatingsane@outlook.com', 'email')}
+						title="Copy email"
 					>
 						<IoMailSharp size={24} />
 						keatingsane@outlook.com
@@ -57,6 +58,7 @@ export const Contact = () => {
 							phoneCopied ? 'text-success' : 'text-secondary'
 						} `}
 						onClick={() => copyToClipboard('407-408-1452', 'phone')}
+						title="Copy phone number"
 					>
 						<RiMessage2Fill size={24} />
 						407-408-1452
@@ -73,6 +75,7 @@ export const Contact = () => {
 				<input
 					id="name"
 					type="text"
+					title="Input your name"
 					placeholder="Name"
 					autoComplete="name"
 					value={name}
@@ -83,6 +86,7 @@ export const Contact = () => {
 				<input
 					id="email"
 					type="email"
+					title="Input your email"
 					placeholder="Email"
 					autoComplete="email"
 					value={email}
@@ -92,6 +96,7 @@ export const Contact = () => {
 				/>
 				<textarea
 					id="message"
+					title="Input your message"
 					placeholder="Message"
 					value={message}
 					onChange={(e) => setMessage(e.target.value)}

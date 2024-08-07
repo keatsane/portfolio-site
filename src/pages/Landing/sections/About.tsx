@@ -1,36 +1,70 @@
+import { useEffect, useState } from 'react'
+import { RefLink } from '../../../components/RefLink'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
 export const About = () => {
+	const [isNautMode, setIsNautMode] = useState(() => {
+		const savedMode = localStorage.getItem('mode')
+		return savedMode === 'naut'
+	})
+
+	useEffect(() => {
+		const savedTheme = localStorage.getItem('mode')
+		if (savedTheme === 'knight') {
+			document.documentElement.classList.add('knight-mode')
+			setIsNautMode(false)
+		} else {
+			document.documentElement.classList.add('knight-mode')
+			setIsNautMode(true)
+		}
+	}, [])
+
+	useEffect(() => {
+		if (isNautMode) {
+			document.documentElement.classList.remove('knight-mode')
+		} else {
+			document.documentElement.classList.add('knight-mode')
+		}
+	}, [isNautMode])
+
+	const toggleAccentMode = () => {
+		const newMode = isNautMode ? 'knight' : 'naut'
+		localStorage.setItem('mode', newMode)
+		setIsNautMode(!isNautMode)
+	}
+
 	return (
 		<section id="about" className="flex flex-col gap-y-2 fade-in text-primary">
 			<h2 className="text-4xl sm:text-5xl font-extrabold mb-4 fade-in">KEATING SANE</h2>
 			<div>
 				<div
-					className="flex flex-col md:flex-row gap-x-2 fade-in"
+					className="flex flex-col md:flex-row md:items-center gap-x-2 fade-in"
 					style={{ animationDelay: '0.05s' }}
 				>
 					<span className="text-secondary">
 						Computer Science student at the University of Central Florida.
 					</span>
-					<span className="text-accent font-bold italic">Go Knights, Charge On!</span>
+					<button
+						className="text-accent font-bold italic hover:bg-opaque p-2 transition"
+						onClick={toggleAccentMode}
+					>
+						{isNautMode ? "Go Nauts', Charge On!" : 'Go Knights, Charge On!'}
+					</button>
 				</div>
 				<div
 					className="flex items-center gap-x-4 mt-4 fade-in"
 					style={{ animationDelay: '0.1s' }}
 				>
-					<a href="https://github.com/keatsane" target="_blank" rel="noopener noreferrer">
-						<FaGithub size={28} className="text-primary hover:text-accent transition" />
-					</a>
-					<a
-						href="https://www.linkedin.com/in/keatingsane/"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<FaLinkedin
-							size={32}
-							className="text-primary hover:text-accent transition"
-						/>
-					</a>
+					<RefLink
+						link="https://github.com/keatsane"
+						title="GitHub"
+						icon={<FaGithub size={28} />}
+					/>
+					<RefLink
+						link="https://www.linkedin.com/in/keatingsane/"
+						title="LinkedIn"
+						icon={<FaLinkedin size={32} />}
+					/>
 				</div>
 			</div>
 		</section>
