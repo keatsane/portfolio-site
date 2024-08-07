@@ -11,7 +11,7 @@ export const Hero = () => {
 				>
 					<span className="text-secondary">
 						Throwback to the mobile classic - Paper Toss - a game where you throw
-						crumpled paper into a trash can
+						crumpled paper into a trash can.
 					</span>
 				</div>
 			</div>
