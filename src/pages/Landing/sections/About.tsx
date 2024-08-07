@@ -38,7 +38,7 @@ export const About = () => {
 			<h2 className="text-4xl sm:text-5xl font-extrabold mb-4 fade-in">KEATING SANE</h2>
 			<div>
 				<div
-					className="flex flex-col md:flex-row md:items-center gap-x-2 fade-in"
+					className="flex items-center gap-x-2 fade-in"
 					style={{ animationDelay: '0.05s' }}
 				>
 					<span className="text-secondary">
