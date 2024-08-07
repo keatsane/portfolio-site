@@ -67,12 +67,12 @@ export const Background = () => {
 			<Canvas
 				camera={{
 					fov: 75,
-					near: 250,
-					far: 350,
-					position: [0, 0, 300],
+					near: 100,
+					far: 300,
+					position: [0, 0, 200],
 				}}
 			>
-				<Points count={400} sep={5} />
+				<Points count={300} sep={5} />
 			</Canvas>
 		</div>
 	)
