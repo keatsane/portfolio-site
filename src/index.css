@@ -3,22 +3,45 @@
 @import 'tailwindcss/utilities';
 
 :root {
-	--white-color: #ffffff;
-	--primary-color: #f8f8f8;
-	--secondary-color: #aaaaaa;
-	--tertiary-color: #525252;
-	--black-color: #000000;
-	--yellow-color: #f7df1e;
+	--primary-color: rgba(243, 243, 243, 1);
+	--secondary-color: rgb(172, 172, 172);
+	--tertiary-color: rgba(116, 116, 116, 1);
+	--quaternary-color: rgba(37, 37, 37, 1);
+	--quinary-color: rgba(12, 12, 12, 1);
 
-	background-color: var(--black-color);
+	--accent-color: rgba(219, 182, 61, 1);
+
+	--opaque-color: rgba(37, 37, 37, 0.4);
+
+	background-color: black;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--quinary-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: var(--accent-color);
+}
+
+::-webkit-scrollbar-track {
+	background-color: var(--background-color);
+}
+
+::-webkit-scrollbar-corner {
+	background-color: var(--background-color);
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	color: var(--primary-color);
 }
 
 ::selection {
-	background-color: var(--yellow-color);
-	color: var(--black-color);
-}
-
-:focus {
-	color: var(--yellow-color);
-	outline: none;
+	background-color: var(--opaque-color);
+	color: var(--accent-color);
 }

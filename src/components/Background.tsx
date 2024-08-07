@@ -1,73 +1,79 @@
 import * as THREE from 'three'
-import { useEffect, useRef } from 'react'
+import { useMemo, useRef } from 'react'
+import { Canvas, useFrame } from '@react-three/fiber'
 
-const Background = () => {
-	const mountRef = useRef<HTMLDivElement>(null)
+type PointsProps = {
+	count: number
+	sep: number
+}
 
-	useEffect(() => {
-		const mount = mountRef.current
-		if (!mount) return
-
-		const scene = new THREE.Scene()
-		const camera = new THREE.PerspectiveCamera(
-			103,
-			window.innerWidth / window.innerHeight,
-			0.1,
-			1000
-		)
-		const renderer = new THREE.WebGLRenderer()
-		renderer.setSize(window.innerWidth, window.innerHeight)
-		mount.appendChild(renderer.domElement)
-
-		const starsGeometry = new THREE.BufferGeometry()
-		const starCount = 10000
-
-		const starPositions = new Float32Array(starCount * 3)
-		for (let i = 0; i < starCount; i++) {
-			starPositions[i] = (Math.random() - 0.5) * 100
+const Points = ({ count, sep }: PointsProps) => {
+	const positions = useMemo(() => {
+		const positions = []
+		for (let i = 0; i < count; i++) {
+			for (let j = 0; j < count; j++) {
+				const x = i * sep - (count * sep) / 2
+				const y = j * sep - (count * sep) / 2
+				const z = 0
+				positions.push(x, y, z)
+			}
 		}
-		starsGeometry.setAttribute('position', new THREE.BufferAttribute(starPositions, 3))
+		return new Float32Array(positions)
+	}, [count, sep])
 
-		const starsMaterial = new THREE.PointsMaterial()
-		starsMaterial.size = 0.005
+	const ref = useRef<THREE.BufferAttribute>(null)
 
-		const stars = new THREE.Points(starsGeometry, starsMaterial)
-		scene.add(stars)
-
-		camera.position.z = 5
-
-		const animate = () => {
-			requestAnimationFrame(animate)
-			renderer.render(scene, camera)
+	useFrame(() => {
+		if (ref.current) {
+			const positions = ref.current.array
+			for (let j = 0; j < count; j++) {
+				for (let i = 0; i < count; i++) {
+					const z = Math.sin((i + j) * 0.2 + 0.1 * Date.now() * 0.01) * 2
+					positions[i * 3 + j * count * 3 + 2] = z
+				}
+			}
+			ref.current.needsUpdate = true
 		}
-		animate()
-
-		const handleResize = () => {
-			camera.aspect = window.innerWidth / window.innerHeight
-			camera.updateProjectionMatrix()
-			renderer.setSize(window.innerWidth, window.innerHeight)
-		}
-		window.addEventListener('resize', handleResize)
-
-		return () => {
-			window.removeEventListener('resize', handleResize)
-			mount.removeChild(renderer.domElement)
-		}
-	}, [])
+	})
 
 	return (
+		<points>
+			<bufferGeometry attach="geometry">
+				<bufferAttribute
+					ref={ref}
+					attach="attributes-position"
+					array={positions}
+					count={positions.length / 3}
+					itemSize={3}
+				/>
+			</bufferGeometry>
+			<pointsMaterial size={0.5} sizeAttenuation color="gray" opacity={0.5} transparent />
+		</points>
+	)
+}
+
+export const Background = () => {
+	return (
 		<div
-			ref={mountRef}
 			style={{
-				position: 'fixed',
+				position: 'absolute',
 				top: 0,
 				left: 0,
 				width: '100%',
 				height: '100%',
 				zIndex: -1,
 			}}
-		/>
+		>
+			<Canvas
+				camera={{
+					fov: 75,
+					near: 250,
+					far: 350,
+					position: [0, 0, 300],
+				}}
+			>
+				<Points count={400} sep={5} />
+			</Canvas>
+		</div>
 	)
 }
-
-export default Background
