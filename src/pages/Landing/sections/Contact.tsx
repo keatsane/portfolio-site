@@ -1,6 +1,7 @@
 import { useState } from 'react'
+import { IoIosSend } from 'react-icons/io'
+import { IoMailSharp } from 'react-icons/io5'
 import { RiMessage2Fill } from 'react-icons/ri'
-import { IoMdMail, IoIosSend } from 'react-icons/io'
 
 export const Contact = () => {
 	const [name, setName] = useState('')
@@ -27,8 +28,11 @@ export const Contact = () => {
 	return (
 		<section id="contact" className="flex flex-col gap-y-2">
 			<div className="flex flex-col sm:flex-row justify-between sm:items-center">
-				<h2 className="text-3xl font-bold mb-2 fade-in" style={{ animationDelay: '0.55s' }}>
-					Contact Me
+				<h2
+					className="text-2xl md:text-3xl font-extrabold mb-2 fade-in"
+					style={{ animationDelay: '0.55s' }}
+				>
+					CONTACT ME
 				</h2>
 				<div
 					className="flex flex-col sm:flex-row gap-x-4 items-start sm:items-center mb-2 sm:mb-0 text-secondary fade-in"
@@ -40,7 +44,7 @@ export const Contact = () => {
 						} `}
 						onClick={() => copyToClipboard('keatingsane@outlook.com', 'email')}
 					>
-						<IoMdMail size={24} />
+						<IoMailSharp size={24} />
 						keatingsane@outlook.com
 						{emailCopied && (
 							<span className="text-sm absolute bottom-0 left-0 right-0 top-0 transform translate-y-full slide-up-down">
@@ -97,10 +101,10 @@ export const Contact = () => {
 				<button
 					type="submit"
 					disabled={!isFormValid}
-					className={`p-2 font-bold focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent ${
+					className={`p-2 font-bold focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition ${
 						!isFormValid
 							? 'bg-secondary cursor-not-allowed'
-							: 'bg-accent hover:bg-accent_dark transition'
+							: 'bg-accent hover:bg-accent_dark'
 					} fade-in`}
 					style={{ animationDelay: '0.8s' }}
 				>

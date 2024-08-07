@@ -4,16 +4,19 @@ import { CgWebsite, CgExtension } from 'react-icons/cg'
 
 export const Projects = () => {
 	return (
-		<section id="projects" className="flex flex-col gap-y-2">
-			<h2 className="text-3xl font-bold fade-in" style={{ animationDelay: '0.2s' }}>
-				Projects
+		<section id="projects" className="flex flex-col gap-y-2 text-primary">
+			<h2
+				className="text-2xl md:text-3xl font-extrabold fade-in"
+				style={{ animationDelay: '0.2s' }}
+			>
+				PROJECTS
 			</h2>
 			<Link
 				to="/TossIt"
 				className="group flex justify-between items-center p-2 hover:bg-opaque transition fade-in"
 				style={{ animationDelay: '0.25s' }}
 			>
-				<span className="font-bold text-lg md:text-2xl text-primary group-hover:text-accent transition italic">
+				<span className="font-bold text-lg md:text-2xl text-primary group-hover:text-accent transition">
 					TossIt
 				</span>
 				<span className="flex items-center gap-x-2 sm:gap-x-4 text-sm md:text-lg text-secondary group-hover:text-accent transition">
@@ -26,7 +29,7 @@ export const Projects = () => {
 				className="group flex justify-between items-center p-2 hover:bg-opaque transition fade-in"
 				style={{ animationDelay: '0.3s' }}
 			>
-				<span className="font-bold text-lg md:text-2xl text-primary group-hover:text-accent transition italic">
+				<span className="font-bold text-lg md:text-2xl text-primary group-hover:text-accent transition">
 					Spotted
 				</span>
 				<span className="flex items-center gap-x-2 sm:gap-x-4 text-sm md:text-lg text-secondary group-hover:text-accent transition">

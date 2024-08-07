@@ -2,8 +2,8 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
 export const About = () => {
 	return (
-		<section id="about" className="flex flex-col gap-y-2 fade-in">
-			<h2 className="text-4xl font-extrabold mb-4 fade-in">Keating Sane</h2>
+		<section id="about" className="flex flex-col gap-y-2 fade-in text-primary">
+			<h2 className="text-4xl sm:text-5xl font-extrabold mb-4 fade-in">KEATING SANE</h2>
 			<div>
 				<div
 					className="flex flex-col md:flex-row gap-x-2 fade-in"
