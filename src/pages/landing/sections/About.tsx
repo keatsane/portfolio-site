@@ -35,26 +35,14 @@ export const About = () => {
 
 	return (
 		<section id="about" className="flex flex-col gap-y-2 fade-in text-primary">
-			<h2 className="text-4xl sm:text-5xl font-extrabold mb-4 fade-in">KEATING SANE</h2>
-			<div>
-				<div
-					className="flex items-center gap-x-2 fade-in"
-					style={{ animationDelay: '0.05s' }}
-				>
-					<span className="text-secondary">
-						Computer Science student at the University of Central Florida.
-					</span>
-					<button
-						className="text-accent font-bold italic hover:bg-opaque p-2 transition"
-						onClick={toggleAccentMode}
-					>
-						{isNautMode ? "Go Nauts', Charge On!" : 'Go Knights, Charge On!'}
-					</button>
-				</div>
-				<div
-					className="flex items-center gap-x-4 mt-4 fade-in"
-					style={{ animationDelay: '0.1s' }}
-				>
+			<div
+				className="flex items-center justify-between fade-in"
+				style={{ animationDelay: '0.05s' }}
+			>
+				<h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold fade-in">
+					KEATING SANE
+				</h2>
+				<div className="flex items-center gap-x-4">
 					<Reference
 						link="https://github.com/keatsane"
 						title="GitHub"
@@ -66,6 +54,20 @@ export const About = () => {
 						icon={<FaLinkedin size={32} />}
 					/>
 				</div>
+			</div>
+			<div
+				className="text-sm sm:text-lg flex items-center justify-between fade-in"
+				style={{ animationDelay: '0.1s' }}
+			>
+				<span className="text-secondary">
+					Computer Science student at the University of Central Florida.
+				</span>
+				<button
+					className="text-accent font-bold italic hover:bg-opaque p-2 transition"
+					onClick={toggleAccentMode}
+				>
+					{isNautMode ? "Go Nauts'!" : 'Go Knights!'}
+				</button>
 			</div>
 		</section>
 	)

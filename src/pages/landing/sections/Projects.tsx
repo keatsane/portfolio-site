@@ -15,7 +15,7 @@ export const Projects = () => {
 				logo={<FaTrash size={24} />}
 				link="/TossIt"
 				name="TossIt"
-				description="Remake of old mobile game"
+				description="Revamp of classic mobile game"
 				delay={0.25}
 				icon={<FaGamepad size={24} />}
 			/>
@@ -31,7 +31,7 @@ export const Projects = () => {
 				logo={<FaQuestion size={24} />}
 				link="/TBD"
 				name="TBD"
-				description="To be decided..."
+				description="To be decided"
 				delay={0.35}
 				icon={<FaQuestion size={24} />}
 			/>

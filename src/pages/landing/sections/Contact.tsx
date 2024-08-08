@@ -30,13 +30,13 @@ export const Contact = () => {
 			<div className="flex flex-col sm:flex-row justify-between sm:items-center">
 				<h2
 					className="text-2xl md:text-3xl font-extrabold mb-2 fade-in"
-					style={{ animationDelay: '0.55s' }}
+					style={{ animationDelay: '0.45s' }}
 				>
 					CONTACT ME
 				</h2>
 				<div
 					className="flex flex-col sm:flex-row gap-x-4 items-start sm:items-center mb-2 sm:mb-0 text-secondary fade-in"
-					style={{ animationDelay: '0.6s' }}
+					style={{ animationDelay: '0.45s' }}
 				>
 					<span
 						className={`flex items-center gap-x-2 hover:bg-opaque p-2 cursor-pointer transition relative ${
@@ -81,7 +81,7 @@ export const Contact = () => {
 					value={name}
 					onChange={(e) => setName(e.target.value)}
 					className="p-2 border border-secondary bg-opaque placeholder:text-secondary focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent fade-in"
-					style={{ animationDelay: '0.65s' }}
+					style={{ animationDelay: '0.5s' }}
 				/>
 				<input
 					id="email"
@@ -92,7 +92,7 @@ export const Contact = () => {
 					value={email}
 					onChange={(e) => setEmail(e.target.value)}
 					className="p-2 border border-secondary bg-opaque placeholder:text-secondary focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent fade-in"
-					style={{ animationDelay: '0.7s' }}
+					style={{ animationDelay: '0.55s' }}
 				/>
 				<textarea
 					id="message"
@@ -101,17 +101,17 @@ export const Contact = () => {
 					value={message}
 					onChange={(e) => setMessage(e.target.value)}
 					className="p-2 border border-secondary bg-opaque placeholder:text-secondary focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent fade-in"
-					style={{ animationDelay: '0.75s', minHeight: '100px', maxHeight: '300px' }}
+					style={{ animationDelay: '0.6s', minHeight: '100px', maxHeight: '300px' }}
 				/>
 				<button
 					type="submit"
 					disabled={!isFormValid}
-					className={`p-2 font-bold focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition ${
+					className={`p-2 font-bold focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition uppercase ${
 						!isFormValid
-							? 'bg-secondary cursor-not-allowed'
+							? 'bg-opaque cursor-not-allowed'
 							: 'bg-accent hover:bg-accent_dark'
 					} fade-in`}
-					style={{ animationDelay: '0.8s' }}
+					style={{ animationDelay: '0.65s' }}
 				>
 					{isFormValid ? (
 						<div className="text-primary flex justify-center items-center gap-x-2">
