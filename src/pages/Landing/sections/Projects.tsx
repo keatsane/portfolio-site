@@ -1,4 +1,4 @@
-import { CgWebsite, CgExtension } from 'react-icons/cg'
+// import { CgWebsite, CgExtension } from 'react-icons/cg'
 import { ProjectCard } from '../../../components/ProjectCard'
 import { FaGamepad, FaTrash, FaGear, FaChessKnight, FaQuestion } from 'react-icons/fa6'
 
@@ -15,7 +15,7 @@ export const Projects = () => {
 				logo={<FaTrash size={24} />}
 				link="/TossIt"
 				name="TossIt"
-				description="Browser remake of classic game"
+				description="Remake of old mobile game"
 				delay={0.25}
 				icon={<FaGamepad size={24} />}
 			/>
