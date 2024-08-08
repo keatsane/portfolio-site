@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { RefLink } from '../../../components/RefLink'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { Reference } from '../../../components/buttons/Reference'
 
 export const About = () => {
 	const [isNautMode, setIsNautMode] = useState(() => {
@@ -55,12 +55,12 @@ export const About = () => {
 					className="flex items-center gap-x-4 mt-4 fade-in"
 					style={{ animationDelay: '0.1s' }}
 				>
-					<RefLink
+					<Reference
 						link="https://github.com/keatsane"
 						title="GitHub"
 						icon={<FaGithub size={28} />}
 					/>
-					<RefLink
+					<Reference
 						link="https://www.linkedin.com/in/keatingsane/"
 						title="LinkedIn"
 						icon={<FaLinkedin size={32} />}

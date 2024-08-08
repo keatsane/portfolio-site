@@ -8,14 +8,14 @@ export const Technologies = () => {
 			<div>
 				<div
 					className="flex flex-col md:flex-row gap-x-2 fade-in"
-					style={{ animationDelay: '0.15s' }}
+					style={{ animationDelay: '0.2s' }}
 				>
 					<span className="text-secondary">Technologies I used in this project:</span>
 				</div>
 				<div className="text-sm sm:text-lg flex flex-col sm:flex-row gap-2 sm:gap-4">
 					<div
 						className="flex items-center gap-2 sm:gap-4 fade-in "
-						style={{ animationDelay: '0.2s' }}
+						style={{ animationDelay: '0.25s' }}
 					>
 						<TechDisplay
 							icon={<SiThreedotjs size={24} />}
@@ -38,7 +38,7 @@ export const Technologies = () => {
 					</div>
 					<div
 						className="flex items-center gap-2 sm:gap-4 fade-in "
-						style={{ animationDelay: '0.25s' }}
+						style={{ animationDelay: '0.3s' }}
 					>
 						<TechDisplay
 							icon={<SiBlender size={24} />}

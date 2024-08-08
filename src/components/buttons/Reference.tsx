@@ -1,10 +1,10 @@
-type RefLinkProps = {
+type ReferenceProps = {
 	link: string
 	title: string
 	icon: React.ReactNode
 }
 
-export const RefLink = ({ link, title, icon }: RefLinkProps) => {
+export const Reference = ({ link, title, icon }: ReferenceProps) => {
 	return (
 		<a
 			href={link}

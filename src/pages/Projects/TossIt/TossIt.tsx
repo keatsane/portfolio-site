@@ -1,6 +1,6 @@
-import { Hero } from './Sections/Hero'
-import { Demo } from './Sections/Demo'
-import { Technologies } from './Sections/Technologies'
+import { Hero } from './sections/Hero'
+import { Demo } from './sections/Demo'
+import { Technologies } from './sections/Technologies'
 
 export const TossIt = () => {
 	return (
@@ -9,12 +9,12 @@ export const TossIt = () => {
 				<Hero />
 				<span
 					className="border-b border-tertiary w-full fade-in"
-					style={{ animationDelay: '0.1s' }}
+					style={{ animationDelay: '0.15s' }}
 				/>
 				<Technologies />
 				<span
 					className="border-b border-tertiary w-full fade-in"
-					style={{ animationDelay: '0.25s' }}
+					style={{ animationDelay: '0.35s' }}
 				/>
 				<Demo />
 			</article>

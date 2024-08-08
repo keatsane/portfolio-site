@@ -1,6 +1,6 @@
-import { FaGamepad, FaGear } from 'react-icons/fa6'
 import { CgWebsite, CgExtension } from 'react-icons/cg'
 import { ProjectCard } from '../../../components/ProjectCard'
+import { FaGamepad, FaTrash, FaGear, FaChessKnight, FaQuestion } from 'react-icons/fa6'
 
 export const Projects = () => {
 	return (
@@ -12,6 +12,7 @@ export const Projects = () => {
 				PROJECTS
 			</h2>
 			<ProjectCard
+				logo={<FaTrash size={24} />}
 				link="/TossIt"
 				name="TossIt"
 				description="Browser remake of classic game"
@@ -19,32 +20,20 @@ export const Projects = () => {
 				icon={<FaGamepad size={24} />}
 			/>
 			<ProjectCard
-				link="/Spotted"
-				name="Spotted"
-				description="Stealth based browser game"
+				logo={<FaChessKnight size={24} />}
+				link="Knights"
+				name="Knights"
+				description="Lightweight chess engine"
 				delay={0.3}
-				icon={<FaGamepad size={24} />}
-			/>
-			<ProjectCard
-				link="/Website"
-				name="Cool Website"
-				description="Website w/ many themes"
-				delay={0.35}
-				icon={<CgWebsite size={24} />}
-			/>
-			<ProjectCard
-				link="/ChromeExtension"
-				name="Extension"
-				description="Useful Chrome Extension"
-				delay={0.4}
-				icon={<CgExtension size={24} />}
-			/>
-			<ProjectCard
-				link="/ChessEngine"
-				name="Chess Engine"
-				description="Basic Chess Engine"
-				delay={0.45}
 				icon={<FaGear size={24} />}
+			/>
+			<ProjectCard
+				logo={<FaQuestion size={24} />}
+				link="/TBD"
+				name="TBD"
+				description="To be decided..."
+				delay={0.35}
+				icon={<FaQuestion size={24} />}
 			/>
 		</section>
 	)
