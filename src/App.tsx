@@ -9,7 +9,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 export const App = () => {
 	return (
 		<BrowserRouter>
-			<Background />
+			{/* <Background /> */}
 			<Header />
 			<Routes>
 				<Route path="/" element={<Landing />} />

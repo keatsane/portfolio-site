@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { IoIosSend } from 'react-icons/io'
 import { IoMailSharp } from 'react-icons/io5'
 import { RiMessage2Fill } from 'react-icons/ri'
+// import { sendEmail } from '../../../utils/Email'
 
 export const Contact = () => {
 	const [name, setName] = useState('')
@@ -40,7 +41,7 @@ export const Contact = () => {
 				>
 					<span
 						className={`flex items-center gap-x-2 hover:bg-opaque p-2 cursor-pointer transition relative ${
-							emailCopied ? 'text-success' : 'text-secondary'
+							emailCopied ? 'text-accent' : 'text-secondary'
 						} `}
 						onClick={() => copyToClipboard('keatingsane@outlook.com', 'email')}
 						title="Copy email"
@@ -48,14 +49,14 @@ export const Contact = () => {
 						<IoMailSharp size={24} />
 						keatingsane@outlook.com
 						{emailCopied && (
-							<span className="text-sm absolute bottom-0 left-0 right-0 top-0 transform translate-y-full slide-up-down">
-								Copied
+							<span className="text-sm absolute bg-background p-0.5 bottom-full left-1/2 -translate-x-1/2 text-accent b-4 font-bold whitespace-nowrap transition">
+								Email Copied
 							</span>
 						)}
 					</span>
 					<span
 						className={`flex items-center gap-x-2 hover:bg-opaque p-2 cursor-pointer transition relative ${
-							phoneCopied ? 'text-success' : 'text-secondary'
+							phoneCopied ? 'text-accent' : 'text-secondary'
 						} `}
 						onClick={() => copyToClipboard('407-408-1452', 'phone')}
 						title="Copy phone"
@@ -63,14 +64,13 @@ export const Contact = () => {
 						<RiMessage2Fill size={24} />
 						407-408-1452
 						{phoneCopied && (
-							<span className="text-sm absolute bottom-0 left-0 right-0 top-0 transform translate-y-full slide-up-down">
-								Copied
+							<span className="text-sm absolute bg-background p-0.5 bottom-full left-1/2 -translate-x-1/2 text-accent b-4 font-bold whitespace-nowrap transition">
+								Phone Copied
 							</span>
 						)}
 					</span>
 				</div>
 			</div>
-
 			<form className="flex flex-col gap-y-2">
 				<input
 					id="name"

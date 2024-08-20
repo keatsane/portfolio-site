@@ -11,8 +11,6 @@
 	--accent-color: rgb(61, 161, 219);
 	--accent-color-dark: rgb(33, 138, 199);
 	--opaque-color: rgba(37, 37, 37, 0.4);
-	--error-color: rgb(255, 0, 0);
-	--success-color: rgb(25, 194, 25);
 	--background-color: rgb(10, 10, 10);
 
 	background-color: var(--background-color);
@@ -80,46 +78,6 @@ input:-webkit-autofill:active {
 	box-shadow: inset 0 0 20px 20px var(--opaque-color);
 }
 
-@keyframes slide-up-down {
-	0% {
-		transform: translateY(20%);
-		clip-path: inset(0 0 100px 0);
-	}
-	50% {
-		transform: translateY(-50%);
-		clip-path: inset(0 0 0 0);
-	}
-	100% {
-		transform: translateY(20%);
-		clip-path: inset(0 0 100px 0);
-	}
-}
-
-@keyframes slide-left-right {
-	0% {
-		transform: translateX(70%);
-		clip-path: inset(0 0 0 30%);
-	}
-	50% {
-		transform: translateX(105%);
-		clip-path: inset(0 0 0 0);
-	}
-	100% {
-		transform: translateX(70%);
-		clip-path: inset(0 0 0 30%);
-	}
-}
-
-.slide-up-down {
-	animation: slide-up-down 1.1s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
-}
-
-@media (max-width: 640px) {
-	.slide-up-down {
-		animation: slide-left-right 1.1s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
-	}
-}
-
 @keyframes fadeIn {
 	from {
 		opacity: 0;
@@ -163,4 +121,23 @@ input:-webkit-autofill:active {
 
 .rotate {
 	animation: rotate 4s linear infinite;
+}
+
+.tooltip {
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: var(--background-color);
+	color: var(--accent-color);
+	padding: 4px 8px;
+	border-radius: 4px;
+	font-size: 16px;
+	white-space: nowrap;
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+}
+
+.tooltip-visible {
+	opacity: 1;
 }

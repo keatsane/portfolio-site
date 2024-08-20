@@ -3,11 +3,11 @@ import { IoSunnyOutline } from 'react-icons/io5'
 import { moonPhases } from '../../utils/MoonPhases'
 
 export const Theme = () => {
+	const [moonPhaseIndex, setMoonPhaseIndex] = useState(0)
 	const [isDarkTheme, setIsDarkTheme] = useState(() => {
 		const savedTheme = localStorage.getItem('theme')
 		return savedTheme === 'dark'
 	})
-	const [moonPhaseIndex, setMoonPhaseIndex] = useState(0)
 
 	useEffect(() => {
 		const savedTheme = localStorage.getItem('theme')
@@ -45,7 +45,7 @@ export const Theme = () => {
 
 	return (
 		<div className="font-semibold flex gap-x-2 md:gap-x-4 text-secondary">
-			<button onClick={toggleTheme} className="hover:text-primary transition">
+			<button onClick={toggleTheme} className="hover:text-accent transition">
 				{isDarkTheme ? (
 					<CurrentMoonPhase
 						size={24}
