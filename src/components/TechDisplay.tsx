@@ -1,11 +1,6 @@
-interface TechDisplayProps {
-	name: string
-	link: string
-	color: string
-	icon: React.ReactNode
-}
+import { Technology } from '../types/Technology'
 
-export const TechDisplay = ({ icon, name, link, color }: TechDisplayProps) => {
+export const TechDisplay = ({ icon, name, link, color }: Technology) => {
 	return (
 		<>
 			<a
@@ -13,7 +8,7 @@ export const TechDisplay = ({ icon, name, link, color }: TechDisplayProps) => {
 				target="_blank"
 				title={name}
 				rel="noopener noreferrer"
-				className="flex items-center bg-opaque hover:bg-opaque_dark space-x-2 font-bold transition cursor-pointer p-2"
+				className="flex items-center hover:bg-opaque space-x-2 font-bold transition cursor-pointer p-2"
 				style={{ color: color }}
 			>
 				<span>{name}</span>

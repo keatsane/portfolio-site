@@ -3,11 +3,11 @@ import { SiThreedotjs, SiTypescript, SiReact, SiBlender } from 'react-icons/si'
 
 export const Technologies = () => {
 	return (
-		<section id="technologies" className="flex flex-col gap-y-2 fade-in text-primary">
+		<section id="technologies" className="flex flex-col fade-in text-primary">
 			<h2 className="text-2xl sm:text-3xl font-extrabold mb-4 fade-in">Technologies</h2>
 			<div>
 				<div
-					className="flex flex-col md:flex-row gap-x-2 fade-in"
+					className="flex flex-col md:flex-row mb-4 fade-in"
 					style={{ animationDelay: '0.2s' }}
 				>
 					<span className="text-secondary">Technologies I used in this project:</span>

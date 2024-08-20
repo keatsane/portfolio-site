@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import { useMemo, useRef } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
+import { Canvas } from '@react-three/fiber'
 
 type PointsProps = {
 	count: number
@@ -8,46 +8,30 @@ type PointsProps = {
 }
 
 const Points = ({ count, sep }: PointsProps) => {
-	const positions = useMemo(() => {
+	const pointsRef = useRef<THREE.Points>(null)
+
+	const points = useMemo(() => {
 		const positions = []
-		for (let i = 0; i < count; i++) {
-			for (let j = 0; j < count; j++) {
-				const x = i * sep - (count * sep) / 2
-				const y = j * sep - (count * sep) / 2
-				const z = 0
-				positions.push(x, y, z)
+		const halfCount = count / 2
+		for (let x = -halfCount; x < halfCount; x++) {
+			for (let y = -halfCount; y < halfCount; y++) {
+				positions.push(x * sep, 0, y * sep)
 			}
 		}
 		return new Float32Array(positions)
 	}, [count, sep])
 
-	const ref = useRef<THREE.BufferAttribute>(null)
-
-	useFrame(() => {
-		if (ref.current) {
-			const positions = ref.current.array
-			for (let j = 0; j < count; j++) {
-				for (let i = 0; i < count; i++) {
-					const z = Math.sin((i + j) * 0.2 + 0.1 * Date.now() * 0.01) * 2
-					positions[i * 3 + j * count * 3 + 2] = z
-				}
-			}
-			ref.current.needsUpdate = true
-		}
-	})
-
 	return (
-		<points>
-			<bufferGeometry attach="geometry">
+		<points ref={pointsRef}>
+			<bufferGeometry>
 				<bufferAttribute
-					ref={ref}
-					attach="attributes-position"
-					array={positions}
-					count={positions.length / 3}
+					attach="attributes.position"
+					array={points}
+					count={points.length / 3}
 					itemSize={3}
 				/>
 			</bufferGeometry>
-			<pointsMaterial size={0.5} sizeAttenuation color="gray" opacity={0.5} transparent />
+			<pointsMaterial color="white" size={0.5} />
 		</points>
 	)
 }
@@ -56,23 +40,22 @@ export const Background = () => {
 	return (
 		<div
 			style={{
-				position: 'absolute',
+				position: 'fixed',
 				top: 0,
 				left: 0,
 				width: '100%',
 				height: '100%',
+				display: 'flex',
+				justifyContent: 'center',
+				alignItems: 'center',
 				zIndex: -1,
+				overflow: 'hidden',
 			}}
 		>
-			<Canvas
-				camera={{
-					fov: 75,
-					near: 100,
-					far: 300,
-					position: [0, 0, 200],
-				}}
-			>
-				<Points count={300} sep={5} />
+			<Canvas>
+				<ambientLight />
+				<pointLight position={[10, 10, 10]} />
+				<Points count={100} sep={1} />
 			</Canvas>
 		</div>
 	)

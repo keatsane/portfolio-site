@@ -13,27 +13,27 @@ export const Projects = () => {
 			</h2>
 			<ProjectCard
 				logo={<FaTrash size={24} />}
-				link="/TossIt"
-				name="TossIt"
-				description="Revamp of classic mobile game"
-				delay={0.25}
-				icon={<FaGamepad size={24} />}
+				title="TossIt"
+				shortDesc="Revamp of classic mobile game"
+				typeIcon={<FaGamepad size={24} />}
+				slug="/TossIt"
+				delay="0.25s"
 			/>
 			<ProjectCard
 				logo={<FaChessKnight size={24} />}
-				link="Knights"
-				name="Knights"
-				description="Lightweight chess engine"
-				delay={0.3}
-				icon={<FaGear size={24} />}
+				title="Knights"
+				shortDesc="Lightweight chess engine"
+				typeIcon={<FaGear size={24} />}
+				slug="/Knights"
+				delay="0.3s"
 			/>
 			<ProjectCard
 				logo={<FaQuestion size={24} />}
-				link="/TBD"
-				name="TBD"
-				description="To be decided"
-				delay={0.35}
-				icon={<FaQuestion size={24} />}
+				title="TBD"
+				shortDesc="To be decided"
+				typeIcon={<FaQuestion size={24} />}
+				slug="/TBD"
+				delay="0.35s"
 			/>
 		</section>
 	)

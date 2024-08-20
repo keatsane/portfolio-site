@@ -1,6 +1,7 @@
 type DividerProps = {
 	delay: number
 }
+
 export const Divider = ({ delay }: DividerProps) => {
 	return (
 		<span

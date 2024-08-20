@@ -13,7 +13,6 @@ const config: Config = {
 				accent: 'var(--accent-color)',
 				accent_dark: 'var(--accent-color-dark)',
 				opaque: 'var(--opaque-color)',
-				opaque_dark: 'var(--opaque-color-dark)',
 				error: 'var(--error-color)',
 				success: 'var(--success-color)',
 				background: 'var(--background-color)',

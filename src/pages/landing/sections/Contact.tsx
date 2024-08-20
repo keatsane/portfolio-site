@@ -58,7 +58,7 @@ export const Contact = () => {
 							phoneCopied ? 'text-success' : 'text-secondary'
 						} `}
 						onClick={() => copyToClipboard('407-408-1452', 'phone')}
-						title="Copy phone number"
+						title="Copy phone"
 					>
 						<RiMessage2Fill size={24} />
 						407-408-1452
