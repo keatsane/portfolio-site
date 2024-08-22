@@ -9,7 +9,6 @@
 	--quaternary-color: rgb(37, 37, 37);
 	--quinary-color: rgb(12, 12, 12);
 	--accent-color: rgb(61, 161, 219);
-	--accent-color-dark: rgb(33, 138, 199);
 	--opaque-color: rgba(37, 37, 37, 0.4);
 	--background-color: rgb(10, 10, 10);
 
@@ -28,7 +27,15 @@
 
 .knight-mode {
 	--accent-color: rgb(244, 197, 0);
-	--accent-color-dark: rgb(220, 170, 0);
+}
+
+body {
+	color: var(--primary-color);
+	/* transition: background-color 0.5s ease-in-out; */
+}
+
+html {
+	scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
@@ -44,15 +51,6 @@
 
 ::-webkit-scrollbar-thumb:hover {
 	background-color: var(--accent-color);
-}
-
-body {
-	font-family: 'Roboto', sans-serif;
-	color: var(--primary-color);
-}
-
-html {
-	scroll-behavior: smooth;
 }
 
 ::selection {
@@ -141,3 +139,44 @@ input:-webkit-autofill:active {
 .tooltip-visible {
 	opacity: 1;
 }
+
+h1 {
+	font-weight: 800;
+	font-size: clamp(2rem, 6vw, 3rem);
+}
+
+h2 {
+	font-weight: 800;
+	font-size: clamp(1.5rem, 5vw, 2.5rem);
+}
+
+h3 {
+	font-weight: 700;
+	font-size: clamp(1.25rem, 4vw, 1.75rem);
+}
+
+p {
+	font-size: clamp(1rem, 3vw, 1.25rem);
+	color: var(--secondary-color);
+}
+
+.container {
+	max-width: 64rem;
+	margin: 0 auto;
+	padding: 2rem 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.section {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+/* .large-icon {
+	display: flex;
+	width: clamp(2rem, 5vw, 4rem);
+	height: clamp(2rem, 5vw, 4rem);
+} */

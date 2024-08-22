@@ -45,7 +45,11 @@ export const Theme = () => {
 
 	return (
 		<div className="font-semibold flex gap-x-2 md:gap-x-4 text-secondary">
-			<button onClick={toggleTheme} className="hover:text-accent transition">
+			<button
+				onClick={toggleTheme}
+				title={isDarkTheme ? 'Switch to light theme' : 'Switch to dark theme'}
+				className="hover:text-accent transition"
+			>
 				{isDarkTheme ? (
 					<CurrentMoonPhase
 						size={24}

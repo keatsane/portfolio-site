@@ -19,12 +19,13 @@ export const ScrollToTop = () => {
 	return (
 		<>
 			{isScrolled && (
-				<div
-					className="fixed bottom-4 right-4 z-50 p-2 bg-opaque hover:bg-quinary text-primary cursor-pointer transition"
+				<button
+					title="Scroll to top"
+					className="fixed bottom-4 right-4 z-50 p-2 bg-opaque hover:bg-accent transition"
 					onClick={scrollToTop}
 				>
 					<IoChevronUpSharp size={24} />
-				</div>
+				</button>
 			)}
 		</>
 	)

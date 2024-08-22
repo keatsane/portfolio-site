@@ -5,14 +5,12 @@ import { Divider } from '../../components/Divider'
 
 export const Landing = () => {
 	return (
-		<main className="">
-			<article className="flex flex-col m-auto max-w-3xl p-6 gap-y-8">
-				<About />
-				<Divider delay={0.15} />
-				<Projects />
-				<Divider delay={0.4} />
-				<Contact />
-			</article>
+		<main className="container">
+			<About />
+			<Divider delay={0.15} />
+			<Projects />
+			<Divider delay={0.55} />
+			<Contact />
 		</main>
 	)
 }

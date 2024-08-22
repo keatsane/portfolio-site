@@ -11,9 +11,9 @@ export const Reference = ({ link, title, icon }: ReferenceProps) => {
 			target="_blank"
 			rel="noopener noreferrer"
 			title={title}
-			className="text-primary hover:text-accent transition"
+			className="hover:text-accent transition"
 		>
-			{icon}
+			<span className="large-icon">{icon}</span>
 		</a>
 	)
 }

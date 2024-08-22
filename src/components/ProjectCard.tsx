@@ -1,23 +1,20 @@
 import { Link } from 'react-router-dom'
 import { Project } from '../types/Project'
 
-export const ProjectCard = ({ logo, title, shortDesc, typeIcon, slug, delay }: Project) => {
+export const ProjectCard = ({ title, shortDesc, slug, delay }: Project) => {
 	return (
 		<Link
 			to={slug}
 			title={title}
-			className="group flex flex-col justify-start gap-y-1 sm:gap-0 sm:flex-row sm:justify-between sm:items-center p-2 hover:bg-opaque transition fade-in"
+			className="group flex justify-between items-center gap-x-4 p-2 hover:bg-opaque transition fade-in"
 			style={{ animationDelay: delay }}
 		>
-			<div className="flex items-center gap-x-2 font-bold text-xl sm:text-2xl text-primary group-hover:text-accent transition">
-				{logo}
+			<h3 className="group-hover:text-accent">
+				<span className="hidden text-quaternary group-hover:inline">&gt; </span>
 				{title}
-			</div>
-
-			<span className="flex items-center gap-x-2 sm:gap-x-4 sm:text-xl text-secondary group-hover:text-accent transition">
-				{shortDesc}
-				{typeIcon}
-			</span>
+				<span className="hidden text-quaternary group-hover:inline"> &lt;</span>
+			</h3>
+			<p className="group-hover:text-accent truncate">{shortDesc}</p>
 		</Link>
 	)
 }

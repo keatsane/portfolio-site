@@ -11,7 +11,6 @@ const config: Config = {
 				quaternary: 'var(--quaternary-color)',
 				quinary: 'var(--quinary-color)',
 				accent: 'var(--accent-color)',
-				accent_dark: 'var(--accent-color-dark)',
 				opaque: 'var(--opaque-color)',
 				background: 'var(--background-color)',
 			},

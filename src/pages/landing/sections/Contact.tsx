@@ -1,7 +1,5 @@
 import { useState } from 'react'
 import { IoIosSend } from 'react-icons/io'
-import { IoMailSharp } from 'react-icons/io5'
-import { RiMessage2Fill } from 'react-icons/ri'
 // import { sendEmail } from '../../../utils/Email'
 
 export const Contact = () => {
@@ -14,107 +12,94 @@ export const Contact = () => {
 	const isFormValid = name && email && message && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
 	const isValidEmail = !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && email
 
-	const copyToClipboard = (text: string, type: 'email' | 'phone') => {
+	const handleCopy = (text: string, type: 'email' | 'phone') => {
 		navigator.clipboard.writeText(text).then(() => {
 			if (type === 'email') {
 				setEmailCopied(true)
-				setTimeout(() => setEmailCopied(false), 1000)
+				setTimeout(() => setEmailCopied(false), 2000)
 			} else {
 				setPhoneCopied(true)
-				setTimeout(() => setPhoneCopied(false), 1000)
+				setTimeout(() => setPhoneCopied(false), 2000)
 			}
 		})
 	}
 
 	return (
-		<section id="contact" className="flex flex-col gap-y-2">
-			<div className="flex flex-col sm:flex-row justify-between sm:items-center">
-				<h2
-					className="text-2xl md:text-3xl font-extrabold mb-2 fade-in"
-					style={{ animationDelay: '0.45s' }}
-				>
-					CONTACT ME
-				</h2>
-				<div
-					className="flex flex-col sm:flex-row gap-x-4 items-start sm:items-center mb-2 sm:mb-0 text-secondary fade-in"
-					style={{ animationDelay: '0.45s' }}
-				>
-					<span
-						className={`flex items-center gap-x-2 hover:bg-opaque p-2 cursor-pointer transition relative ${
-							emailCopied ? 'text-accent' : 'text-secondary'
-						} `}
-						onClick={() => copyToClipboard('keatingsane@outlook.com', 'email')}
+		<section id="contact" className="section">
+			<div
+				className="flex flex-col md:flex-row md:justify-between md:items-center fade-in"
+				style={{ animationDelay: '0.6s' }}
+			>
+				<h2>CONTACT ME</h2>
+				<div className="flex gap-x-2">
+					<p
+						className={`p-2 transition cursor-pointer truncate ${
+							emailCopied
+								? 'bg-accent text-primary cursor-default'
+								: 'hover:bg-opaque'
+						}`}
 						title="Copy email"
+						onClick={() => handleCopy('keatingsane@outlook.com', 'email')}
 					>
-						<IoMailSharp size={24} />
 						keatingsane@outlook.com
-						{emailCopied && (
-							<span className="text-sm absolute bg-background p-0.5 bottom-full left-1/2 -translate-x-1/2 text-accent b-4 font-bold whitespace-nowrap transition">
-								Email Copied
-							</span>
-						)}
-					</span>
-					<span
-						className={`flex items-center gap-x-2 hover:bg-opaque p-2 cursor-pointer transition relative ${
-							phoneCopied ? 'text-accent' : 'text-secondary'
-						} `}
-						onClick={() => copyToClipboard('407-408-1452', 'phone')}
+					</p>
+					<p
+						className={`p-2 transition cursor-pointer truncate ${
+							phoneCopied
+								? 'bg-accent text-primary cursor-default'
+								: 'hover:bg-opaque'
+						}`}
 						title="Copy phone"
+						onClick={() => handleCopy('4074081452', 'phone')}
 					>
-						<RiMessage2Fill size={24} />
 						407-408-1452
-						{phoneCopied && (
-							<span className="text-sm absolute bg-background p-0.5 bottom-full left-1/2 -translate-x-1/2 text-accent b-4 font-bold whitespace-nowrap transition">
-								Phone Copied
-							</span>
-						)}
-					</span>
+					</p>
 				</div>
 			</div>
 			<form className="flex flex-col gap-y-2">
 				<input
 					id="name"
 					type="text"
-					title="Input your name"
+					title="Input name"
 					placeholder="Name"
 					autoComplete="name"
 					value={name}
 					onChange={(e) => setName(e.target.value)}
-					className="p-2 border border-secondary bg-opaque placeholder:text-secondary focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent fade-in"
-					style={{ animationDelay: '0.5s' }}
+					className="p-2 border border-secondary bg-opaque placeholder:text-tertiary focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent fade-in"
+					style={{ animationDelay: '0.65s' }}
 				/>
 				<input
 					id="email"
 					type="email"
-					title="Input your email"
+					title="Input email"
 					placeholder="Email"
 					autoComplete="email"
 					value={email}
 					onChange={(e) => setEmail(e.target.value)}
-					className="p-2 border border-secondary bg-opaque placeholder:text-secondary focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent fade-in"
-					style={{ animationDelay: '0.55s' }}
+					className="p-2 border border-secondary bg-opaque placeholder:text-tertiary focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent fade-in"
+					style={{ animationDelay: '0.7s' }}
 				/>
 				<textarea
 					id="message"
-					title="Input your message"
+					title="Input message"
 					placeholder="Message"
 					value={message}
 					onChange={(e) => setMessage(e.target.value)}
-					className="p-2 border border-secondary bg-opaque placeholder:text-secondary focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent fade-in"
-					style={{ animationDelay: '0.6s', minHeight: '100px', maxHeight: '300px' }}
+					className="p-2 border border-secondary bg-opaque placeholder:text-tertiary focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent fade-in"
+					style={{ animationDelay: '0.75s', minHeight: '100px', maxHeight: '300px' }}
 				/>
 				<button
 					type="submit"
 					disabled={!isFormValid}
 					className={`p-2 font-bold focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition uppercase ${
 						!isFormValid
-							? 'bg-opaque cursor-not-allowed'
-							: 'bg-accent hover:bg-accent_dark'
+							? 'bg-opaque cursor-not-allowed text-secondary'
+							: 'bg-accent text-primary hover:bg-primary hover:text-accent'
 					} fade-in`}
-					style={{ animationDelay: '0.65s' }}
+					style={{ animationDelay: '0.8s' }}
 				>
 					{isFormValid ? (
-						<div className="text-primary flex justify-center items-center gap-x-2">
+						<div className="flex justify-center items-center gap-x-2">
 							Send <IoIosSend size={18} />
 						</div>
 					) : isValidEmail ? (
